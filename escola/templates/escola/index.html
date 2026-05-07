@@ -1,0 +1,345 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day One na Escola | Educação Viária de Excelência</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.7s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .soft-shadow {
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -15px rgba(0, 31, 63, 0.1);
+      }
+
+      .bg-dayone {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800">
+    <nav class="fixed w-full z-50 py-4 px-6" id="navbar">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="bg-white/95 backdrop-blur-md border border-slate-200 p-4 rounded-2xl flex justify-between items-center soft-shadow"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-1.5 shadow-sm border border-slate-100"
+            >
+              <img
+                src="{% static 'escola/img/logo-1.jpg' %}"
+                alt="Logo Day One na Escola"
+                class="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <div class="flex flex-col leading-none">
+              <span class="text-xl font-black text-blue-950 tracking-tighter">
+                DAY <span class="text-yellow-500">ONE</span>
+              </span>
+              <span
+                class="text-[9px] uppercase tracking-[0.3em] font-black text-slate-400"
+              >
+                Na Escola
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500"
+          >
+            <a href="#programa" class="hover:text-blue-900 transition"
+              >O Método</a
+            >
+            <a href="#metodologia" class="hover:text-blue-900 transition"
+              >Pilares</a
+            >
+            <a href="#matricula" class="text-blue-900">Inscrições</a>
+          </div>
+
+          <a
+            href="#matricula"
+            class="bg-blue-950 text-white px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-blue-800 transition-all"
+          >
+            Matricular Aluno
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="relative pt-40 pb-20 lg:pt-56 lg:pb-32 bg-dayone overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10"
+      >
+        <div class="reveal">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-blue-900 text-[10px] font-black uppercase tracking-widest mb-8 shadow-sm"
+          >
+            <span
+              class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"
+            ></span>
+            Programa Day One 2026
+          </div>
+          <h1
+            class="text-6xl lg:text-7xl font-black text-blue-950 mb-6 leading-[1.1] tracking-tight"
+          >
+            O primeiro passo para um
+            <span class="text-blue-700">trânsito consciente.</span>
+          </h1>
+          <p
+            class="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl font-medium"
+          >
+            O programa <strong>Day One na Escola</strong> prepara crianças e
+            adolescentes para os desafios das ruas com responsabilidade, ética e
+            tecnologia.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#matricula"
+              class="px-8 py-4 bg-yellow-500 text-blue-950 font-black rounded-xl shadow-xl shadow-yellow-500/20 hover:scale-105 transition-all text-center uppercase tracking-tighter text-sm"
+            >
+              Iniciar Matrícula
+            </a>
+            <div
+              class="flex items-center gap-4 px-6 py-2 bg-white/50 rounded-xl border border-white"
+            >
+              <span
+                class="text-xs font-bold text-slate-500 uppercase tracking-widest"
+                >Referência em Guarulhos - SP</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="relative reveal" style="transition-delay: 0.2s">
+          <div
+            class="rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white relative z-10"
+          >
+            <img
+              src="{% static 'escola/img/banner.png' %}"
+              class="w-full h-full object-cover"
+              alt="Day One na Escola"
+            />
+          </div>
+          <div
+            class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-3xl -z-10"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programa" class="py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 reveal">
+          <span
+            class="text-yellow-500 font-black uppercase tracking-[0.3em] text-[10px]"
+            >Por que Day One?</span
+          >
+          <h2 class="text-4xl font-black text-blue-950 mt-4">
+            Qualidade e Credibilidade
+          </h2>
+          <div class="w-12 h-1.5 bg-blue-900 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div
+            class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-hover transition-all duration-500 reveal"
+          >
+            <div class="text-3xl text-blue-900 mb-6">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3
+              class="text-xl font-black text-blue-950 mb-4 uppercase tracking-tighter"
+            >
+              Pedagogia Moderna
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Conteúdo desenvolvido para ser absorvido de forma natural,
+              respeitando cada fase do desenvolvimento infantil.
+            </p>
+          </div>
+          <div
+            class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-hover transition-all duration-500 reveal"
+            style="transition-delay: 0.1s"
+          >
+            <div class="text-3xl text-blue-900 mb-6">
+              <i class="fas fa-vr-cardboard"></i>
+            </div>
+            <h3
+              class="text-xl font-black text-blue-950 mb-4 uppercase tracking-tighter"
+            >
+              Vivência Prática
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Circuitos que simulam o trânsito real, permitindo que o aluno
+              aprenda na prática o valor da segurança.
+            </p>
+          </div>
+          <div
+            class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 card-hover transition-all duration-500 reveal"
+            style="transition-delay: 0.2s"
+          >
+            <div class="text-3xl text-blue-900 mb-6">
+              <i class="fas fa-award"></i>
+            </div>
+            <h3
+              class="text-xl font-black text-blue-950 mb-4 uppercase tracking-tighter"
+            >
+              Selo Day One
+            </h3>
+            <p class="text-slate-500 text-sm leading-relaxed">
+              Escolas parceiras e alunos recebem certificação exclusiva do
+              programa mais respeitado da região.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="matricula" class="py-32 bg-slate-50 relative overflow-hidden">
+      <div
+        class="absolute top-0 right-0 w-1/2 h-full bg-blue-900/5 -skew-x-12 translate-x-1/4"
+      ></div>
+
+      <div class="max-w-xl mx-auto px-6 relative z-10">
+        <div
+          class="bg-white p-10 md:p-16 rounded-[3rem] shadow-2xl border border-slate-100 reveal"
+        >
+          <div class="text-center mb-12">
+            <h2
+              class="text-4xl font-black text-blue-950 mb-3 tracking-tighter uppercase"
+            >
+              Matrícula
+            </h2>
+            <p
+              class="text-slate-500 text-xs font-bold uppercase tracking-widest"
+            >
+              Inicie agora o processo digital
+            </p>
+          </div>
+
+          <form class="space-y-8">
+            <div class="space-y-2">
+              <label
+                class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1"
+                >Nome do Aluno</label
+              >
+              <input
+                type="text"
+                class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:border-yellow-500 focus:bg-white outline-none transition-all font-medium"
+                placeholder="Nome completo do estudante"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1"
+                >Escola / Instituição</label
+              >
+              <input
+                type="text"
+                class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:border-yellow-500 focus:bg-white outline-none transition-all font-medium"
+                placeholder="Nome do colégio"
+              />
+            </div>
+            <div class="space-y-2">
+              <label
+                class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] ml-1"
+                >E-mail para Contrato</label
+              >
+              <input
+                type="email"
+                class="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl p-4 focus:border-yellow-500 focus:bg-white outline-none transition-all font-medium"
+                placeholder="E-mail do responsável"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full py-5 bg-blue-950 text-white font-black rounded-2xl hover:bg-blue-800 transition-all shadow-xl shadow-blue-950/20 uppercase tracking-widest text-xs mt-6"
+            >
+              Próxima Etapa: Contrato
+              <i class="fas fa-chevron-right ml-2 text-[10px]"></i>
+            </button>
+            <div
+              class="flex items-center justify-center gap-2 text-[10px] text-slate-400 font-bold uppercase tracking-widest"
+            >
+              <i class="fas fa-lock"></i> Ambiente Seguro LGPD
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-20 bg-white border-t border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="flex items-center justify-center gap-3 mb-8">
+          <span class="text-xl font-black text-blue-950 tracking-tighter italic"
+            >DAY <span class="text-yellow-500">ONE</span></span
+          >
+        </div>
+        <p
+          class="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em]"
+        >
+          © 2026 Day One na Escola • Soluções Educacionais
+        </p>
+        <p class="text-slate-300 text-[9px] mt-4 font-bold">
+          GUARULHOS - SÃO PAULO
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 100;
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          }
+        }
+      }
+      window.addEventListener("scroll", reveal);
+      reveal();
+
+      window.onscroll = function () {
+        var nav = document.getElementById("navbar");
+        if (window.pageYOffset > 50) {
+          nav.classList.add("py-2");
+          nav.classList.remove("py-4");
+        } else {
+          nav.classList.add("py-4");
+          nav.classList.remove("py-2");
+        }
+      };
+    </script>
+  </body>
+</html>
