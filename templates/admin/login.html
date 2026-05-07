@@ -6,75 +6,117 @@ block.super }}
   rel="stylesheet"
 />
 <style>
+  /* Fundo Escuro */
   body {
     background: #020617 !important;
-    font-family:
-      "Inter",
-      sans-serif !hide;
+    font-family: "Inter", sans-serif !important;
   }
+
+  /* Esconder elementos padrão desnecessários */
   #header,
   .breadcrumbs {
     display: none !important;
   }
 
-  /* Customizando o formulário padrão do Django */
-  .login #container {
+  /* Ajuste da Caixa de Login */
+  #container {
     background: white !important;
     border-radius: 2rem !important;
-    overflow: hidden !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
     border: none !important;
     padding: 40px !important;
     width: 100% !important;
-    max-width: 400px !important;
-    margin: 100px auto !important;
+    max-width: 450px !important; /* Limita o tamanho da caixa */
+    margin: 80px auto !important;
+    display: block !important;
   }
 
+  /* Ajuste dos Campos de Texto */
   .login .form-row {
     border: none !important;
-    padding: 10px 0 !important;
+    padding: 12px 0 !important;
   }
+
   .login label {
     font-size: 10px !important;
     font-weight: 900 !important;
     text-transform: uppercase !important;
     color: #64748b !important;
     letter-spacing: 0.1em !important;
+    margin-bottom: 8px !important;
+    display: block !important;
   }
 
+  /* Cor da letra dentro dos campos */
   input[type="text"],
   input[type="password"] {
     width: 100% !important;
-    background: #f8fafc !important;
+    background: #f1f5f9 !important;
     border: 1px solid #e2e8f0 !important;
     border-radius: 0.75rem !important;
-    padding: 12px !important;
-    margin-top: 5px !important;
+    padding: 14px !important;
+    color: #0f172a !important; /* Cor da letra bem escura */
+    font-weight: 600 !important;
+    outline: none !important;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #fbbf24 !important; /* Borda amarela no foco */
+    background: #ffffff !important;
+  }
+
+  /* Botão Acessar */
+  .submit-row {
+    border: none !important;
+    background: none !important;
+    margin-top: 20px !important;
+    padding: 0 !important;
   }
 
   .submit-row input {
     background: #172554 !important; /* Blue 950 */
+    color: white !important;
     width: 100% !important;
-    height: 50px !important;
+    height: 55px !important;
     border-radius: 0.75rem !important;
     font-weight: 900 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
+    border: none !important;
+    cursor: pointer !important;
     transition: all 0.3s !important;
   }
 
   .submit-row input:hover {
     background: #1e3a8a !important;
     transform: translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(23, 37, 84, 0.3) !important;
+  }
+
+  /* Mensagens de Erro */
+  .errornote {
+    background: #fee2e2 !important;
+    color: #b91c1c !important;
+    border-radius: 0.75rem !important;
+    border: none !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    padding: 10px !important;
+    margin-bottom: 20px !important;
   }
 </style>
 {% endblock %} {% block content %}
-<div class="flex flex-col items-center mb-8">
-  <h1 class="text-2xl font-black text-blue-950 italic">
+<div class="flex flex-col items-center mb-10 text-center">
+  <h1 class="text-3xl font-black text-blue-950 italic tracking-tighter">
     DAY <span class="text-yellow-500">ONE</span>
   </h1>
-  <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">
+  <p
+    class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em] mt-1"
+  >
     Gestão de Educação Viária
   </p>
+  <div class="w-8 h-1 bg-yellow-500 mt-4 rounded-full"></div>
 </div>
+
 {{ block.super }} {% endblock %}
