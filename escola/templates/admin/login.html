@@ -1,0 +1,65 @@
+{% extends "admin/login.html" %} {% load static %} {% block extrastyle %} {{
+block.super }}
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* REMOVER TUDO QUE SOBRA */
+  body {
+    background: #020617 !important;
+    margin: 0;
+    padding: 0;
+  }
+  #header,
+  .breadcrumbs,
+  .help,
+  font-family {
+    display: none !important;
+  }
+
+  /* CAIXA COMPACTA E CENTRALIZADA */
+  #container {
+    background: white !important;
+    border-radius: 2rem !important;
+    padding: 40px 30px !important;
+    width: 100% !important;
+    max-width: 360px !important; /* BEM MENOR */
+    margin: 12vh auto !important;
+    border: none !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  /* TEXTO DOS INPUTS (ESCURECIDO) */
+  input[type="text"],
+  input[type="password"] {
+    color: #1e293b !important;
+    background: #f8fafc !important;
+    font-weight: 600 !important;
+    padding: 12px !important;
+    border-radius: 0.75rem !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .submit-row input {
+    background: #172554 !important;
+    border-radius: 0.75rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    height: 50px !important;
+    width: 100% !important;
+    cursor: pointer !important;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="flex flex-col items-center mb-8 text-center">
+  <div
+    class="flex flex-col italic font-black text-blue-950 uppercase text-2xl tracking-tighter"
+  >
+    DAY <span class="text-yellow-500">ONE</span>
+  </div>
+  <span
+    class="text-[8px] font-bold text-slate-400 uppercase tracking-[0.3em] mt-1"
+    >Educação Viária</span
+  >
+  <div class="w-6 h-1 bg-yellow-500 mt-3 rounded-full"></div>
+</div>
+
+{{ block.super }} {% endblock %}
