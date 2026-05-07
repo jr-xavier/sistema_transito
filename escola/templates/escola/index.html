@@ -83,12 +83,17 @@
             <a href="#matricula" class="text-blue-900">Inscrições</a>
           </div>
 
-          <a
-            href="#matricula"
-            class="bg-blue-950 text-white px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-blue-800 transition-all"
-          >
-            Matricular Aluno
-          </a>
+          <div class="flex items-center">
+            <a
+              href="{% url 'admin:index' %}"
+              class="flex items-center gap-2 bg-white/5 hover:bg-white/15 text-white border border-white/20 px-5 py-2.5 rounded-full font-black text-[10px] uppercase tracking-widest transition-all group"
+            >
+              <span>Acesso Restrito</span>
+              <i
+                class="fas fa-user-lock text-yellow-500 group-hover:scale-110 transition-transform"
+              ></i>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
