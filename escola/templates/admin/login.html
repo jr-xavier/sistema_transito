@@ -1,55 +1,66 @@
-{% extends "admin/login.html" %} {% load static %} {% block extrastyle %} {{
-block.super }}
+{% extends "admin/login.html" %} {% block extrastyle %} {{ block.super }}
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  /* REMOVER TUDO QUE SOBRA */
+  /* 1. FUNDO E REMOÇÃO DE LIXO */
   body {
     background: #020617 !important;
-    margin: 0;
-    padding: 0;
+    font-family: sans-serif;
   }
   #header,
   .breadcrumbs,
-  .help,
-  font-family {
+  .help {
     display: none !important;
   }
 
-  /* CAIXA COMPACTA E CENTRALIZADA */
+  /* 2. CAIXA BRANCA COMPACTA */
   #container {
     background: white !important;
     border-radius: 2rem !important;
-    padding: 40px 30px !important;
+    padding: 30px !important;
     width: 100% !important;
-    max-width: 360px !important; /* BEM MENOR */
-    margin: 12vh auto !important;
+    max-width: 360px !important; /* CAIXA PEQUENA */
+    margin: 10vh auto !important;
     border: none !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
   }
 
-  /* TEXTO DOS INPUTS (ESCURECIDO) */
-  input[type="text"],
-  input[type="password"] {
-    color: #1e293b !important;
-    background: #f8fafc !important;
-    font-weight: 600 !important;
-    padding: 12px !important;
-    border-radius: 0.75rem !important;
-    border: 1px solid #e2e8f0 !important;
+  /* 3. LETRAS DOS CAMPOS (BEM ESCURAS) */
+  .login .form-row {
+    border: none !important;
+    padding: 8px 0 !important;
   }
 
+  input[type="text"],
+  input[type="password"] {
+    width: 100% !important;
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0.75rem !important;
+    padding: 12px !important;
+    color: #000000 !important; /* PRETO ABSOLUTO PARA LER BEM */
+    font-weight: bold !important;
+  }
+
+  /* 4. BOTÃO ACESSAR */
+  .submit-row {
+    border: none !important;
+    background: none !important;
+    margin-top: 20px !important;
+  }
   .submit-row input {
     background: #172554 !important;
+    color: white !important;
+    width: 100% !important;
+    height: 48px !important;
     border-radius: 0.75rem !important;
     font-weight: 900 !important;
     text-transform: uppercase !important;
-    height: 50px !important;
-    width: 100% !important;
     cursor: pointer !important;
+    border: none !important;
   }
 </style>
 {% endblock %} {% block content %}
-<div class="flex flex-col items-center mb-8 text-center">
+<div class="flex flex-col items-center mb-6 text-center">
   <div
     class="flex flex-col italic font-black text-blue-950 uppercase text-2xl tracking-tighter"
   >
@@ -61,5 +72,4 @@ block.super }}
   >
   <div class="w-6 h-1 bg-yellow-500 mt-3 rounded-full"></div>
 </div>
-
 {{ block.super }} {% endblock %}
