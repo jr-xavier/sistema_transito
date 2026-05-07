@@ -1,0 +1,80 @@
+{% extends "admin/login.html" %} {% load static %} {% block extrastyle %} {{
+block.super }}
+<script src="https://cdn.tailwindcss.com"></script>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  body {
+    background: #020617 !important;
+    font-family:
+      "Inter",
+      sans-serif !hide;
+  }
+  #header,
+  .breadcrumbs {
+    display: none !important;
+  }
+
+  /* Customizando o formulário padrão do Django */
+  .login #container {
+    background: white !important;
+    border-radius: 2rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    border: none !important;
+    padding: 40px !important;
+    width: 100% !important;
+    max-width: 400px !important;
+    margin: 100px auto !important;
+  }
+
+  .login .form-row {
+    border: none !important;
+    padding: 10px 0 !important;
+  }
+  .login label {
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    color: #64748b !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100% !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0.75rem !important;
+    padding: 12px !important;
+    margin-top: 5px !important;
+  }
+
+  .submit-row input {
+    background: #172554 !important; /* Blue 950 */
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 0.75rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    transition: all 0.3s !important;
+  }
+
+  .submit-row input:hover {
+    background: #1e3a8a !important;
+    transform: translateY(-2px) !important;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="flex flex-col items-center mb-8">
+  <h1 class="text-2xl font-black text-blue-950 italic">
+    DAY <span class="text-yellow-500">ONE</span>
+  </h1>
+  <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">
+    Gestão de Educação Viária
+  </p>
+</div>
+{{ block.super }} {% endblock %}
